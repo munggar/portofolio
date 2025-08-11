@@ -231,12 +231,14 @@ section p {
   border-radius: 20px;
   overflow: hidden;
   height: 12px;
+  transition: transform 0.3s ease, 
+                box-shadow 0.3s ease, 
+                background 0.3s ease, 
+                border-color 0.3s ease;
 }
 .skill-bar:hover {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.6), 0 8px 10px var(--accent);
-    transform: translateY(-5px);
-    /* transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease; */
-    transition: transform 0.3s ease, box-shadow 0.3s ease-out, background 0.3s ease, border-color 0.3s ease ;    
+    box-shadow: 0 8px 20px rgba(0,0,0,6), 0 8px 5px var(--accent);
+    transform: translateY(-5px);    
 }
 .skill-bar > div {
   height: 100%;
@@ -282,6 +284,7 @@ section p {
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 18px 50px rgba(0,0,0,0.6), 0 8px 30px var(--accent);
+  transition: ease-in-out .3s cubic-bezier(.2,.9,.3,1), box-shadow .3s ease;
     /* background: var(--card); */
 }
 
