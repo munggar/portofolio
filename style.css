@@ -326,3 +326,4 @@ body.light-mode{
   color: #071029;
 }
 body.light-mode .profile-pic{box-shadow:0 10px 30px rgba(2,6,23,0.06)}
+main.light-mode nav{color: #071029;}
