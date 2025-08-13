@@ -2,180 +2,314 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Munggar Fajar Muharram | Web Developer</title>
-    <link rel="stylesheet" href="style.css" />
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Font Awesome Icons -->
+
+    <!-- SEO & Social -->
+    <meta name="description" content="Munggar Fajar Muharram — Web Developer. Laravel, React, PostgreSQL, UI/UX." />
+    <meta name="theme-color" content="#0f172a" />
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- HERO SECTION -->
-    <header class="hero" id="home">
-        <div class="hero-content" data-aos="fade-up">
-            <h1>Hi, I'm <span class="typing"></span></h1>
-            <p>Web Developer | UI Designer | Problem Solver</p>
-            <a href="#projects" class="btn btn-view">View My Work</a>
-            <a href="#contact" class="btn btn-outline">Hire Me</a>
+    <!-- PRELOADER -->
+    <div id="preloader" aria-hidden="true">
+        <div class="spinner">
+            <svg viewBox="0 0 50 50">
+                <circle cx="25" cy="25" r="20" />
+            </svg>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a class="logo" href="#home">Munggar.dev</a>
+
+            <button class="nav-toggle" aria-label="Open menu" id="navToggle">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="nav" id="nav">
+                <ul>
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <!-- THEME TOGGLE -->
+                    <li>
+                        <div class="box">
+                            <input class="type-checkbox" id="themeToggle" type="checkbox" name="name">
+                            <label class="estado" for="themeToggle">
+                                <span class="desaprobado">Light Mode ☀️</span>
+                                <span class="aprobado">Dark Mode 🌙</span>
+                            </label>
+                        </div>
+                    </li>
+                    <!-- <button id="themeToggle" class="toggle-btn" aria-label="Toggle dark mode">
+    <i class="fas fa-moon"></i>
+                    </button> -->
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- ABOUT -->
-    <section id="about" data-aos="fade-up">
-        <h2>About Me</h2>
-        <p>Halo, saya Munggar Fajar Muharram, seorang Web Developer yang fokus pada pembuatan website modern, cepat, dan
-            responsif. Saya memiliki pengalaman dengan Laravel, React, PostgreSQL, dan desain UI/UX.</p>
-        <div class="skills-list">
-            <i class="fab fa-html5"></i>
-            <i class="fab fa-css3-alt"></i>
-            <i class="fab fa-js"></i>
-            <i class="fab fa-laravel"></i>
-            <i class="fab fa-php"></i>
-            <i class="fas fa-database"></i>
-        </div>
-    </section>
+    <!-- HERO -->
+    <main>
+        <section id="home" class="hero section">
+            <div class="container hero-inner">
+                <div class="hero-left">
+                    <h1>Hi, I'm <span class="typing" id="typingName">Munggar Fajar Muharram</span></h1>
+                    <h2 class="subtitle">Web Developer | UI Designer | Problem Solver</h2>
+                    <p class="hero-desc">
+                        I build modern, fast, and responsive websites using Laravel, React, PostgreSQL, and UI/UX best
+                        practices.
+                    </p>
+                    <div class="hero-cta">
+                        <a class="btn primary" href="#projects">View My Work</a>
+                        <a class="btn outline" href="#contact">Hire Me</a>
+                    </div>
+                </div>
 
-    <!-- SKILLS -->
-    <section id="skills" data-aos="fade-up">
-        <h2>Skills</h2>
-        <div class="skill">
-            <span>HTML</span>
-            <div class="skill-bar">
-                <div style="width:90%"></div>
+                <div class="hero-right">
+                    <div class="profile-wrap">
+                        <img class="profile-pic" src="../my-portofolio/aku-removebg-preview.png"
+                            alt="Profile picture of Munggar Fajar Muharram" loading="lazy">
+                        <div class="profile-glow" aria-hidden="true"></div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <span>CSS</span>
-            <div class="skill-bar">
-                <div style="width:85%"></div>
-            </div>
-        </div>
-        <div class="skill">
-            <span>JavaScript</span>
-            <div class="skill-bar">
-                <div style="width:80%"></div>
-            </div>
-        </div>
-        <div class="skill">
-            <span>Laravel</span>
-            <div class="skill-bar">
-                <div style="width:75%"></div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" data-aos="fade-up">
-        <h2>Proyek</h2>
-        <div class="project-list">
-            <div class="project-card">
-                <h3>Portofolio Pribadi</h3>
-                <p>Website portofolio statis yang menampilkan profil, proyek, dan informasi kontak. Dibangun menggunakan
-                    HTML, CSS, dan JavaScript, dihosting di GitHub Pages.</p>
-                <a href="https://munggar.github.io" target="_blank">Lihat Website</a>
-                <a href="https://github.com/munggar/munggar.github.io" target="_blank">Lihat Repo</a>
-            </div>
-            <div class="project-card">
-                <h3>projectPKK</h3>
-                <p>Aplikasi JavaScript sederhana untuk pengelolaan data PKK, mencakup fitur input data, validasi, dan
-                    tampilan yang mudah digunakan.</p>
-                <a href="https://github.com/munggar/projectPKK" target="_blank">Lihat Repo</a>
-            </div>
-            <div class="project-card">
-                <h3>ujikom</h3>
-                <p>Proyek Uji Kompetensi Keahlian yang mencakup pengembangan aplikasi web dasar dengan HTML, CSS, dan
-                    JavaScript, serta pengolahan data sederhana.</p>
-                <a href="https://github.com/munggar/ujikom" target="_blank">Lihat Repo</a>
-            </div>
-        </div>
-    </section>
+        <!-- ABOUT -->
+        <section id="about" class="section fade-up">
+            <div class="container">
+                <h3 class="section-title">About Me</h3>
+                <p class="lead">
+                    Halo, saya <strong>Munggar Fajar Muharram</strong>, seorang Web Developer yang fokus pada pembuatan
+                    website modern,
+                    cepat, dan responsif. Saya memiliki pengalaman dengan Laravel, React, PostgreSQL, dan desain UI/UX.
+                </p>
 
-    <!-- <section id="projects" data-aos="fade-up">
-        <h2>Projects</h2>
-        <div class="project-list">
-            <div class="project-card">
-                <img src="https://via.placeholder.com/300x200" alt="Project 1">
-                <h3>Inventory Management System</h3>
-                <p>Laravel + PostgreSQL web app to manage stock, transactions, and reports.</p>
-                <a href="#">View Project</a>
+                <div class="skills-icons">
+                    <i class="fab fa-html5" title="HTML5"></i>
+                    <i class="fab fa-css3-alt" title="CSS3"></i>
+                    <i class="fab fa-js" title="JavaScript"></i>
+                    <i class="fab fa-laravel" title="Laravel"></i>
+                    <i class="fab fa-php" title="PHP"></i>
+                    <i class="fas fa-database" title="Database"></i>
+                </div>
             </div>
-            <div class="project-card">
-                <img src="https://via.placeholder.com/300x200" alt="Project 2">
-                <h3>Personal Portfolio</h3>
-                <p>Static portfolio website hosted on GitHub Pages.</p>
-                <a href="#">View Project</a>
-            </div>
-            <div class="project-card">
-                <img src="https://via.placeholder.com/300x200" alt="Project 3">
-                <h3>Daily Task App</h3>
-                <p>Interactive to-do list with drag-and-drop and local storage.</p>
-                <a href="#">View Project</a>
-            </div>
-        </div>
-    </section> -->
+        </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience" data-aos="fade-up">
-        <h2>Pengalaman</h2>
-        <div class="project-list">
-            <div class="project-card">
-                <h3>Freelance Web Developer</h3>
-                <p>Membangun website untuk UMKM dan portofolio personal dengan fokus pada desain responsif, optimasi
-                    performa, dan kemudahan penggunaan.</p>
-                <span>2024 - Sekarang</span>
-            </div>
-            <div class="project-card">
-                <h3>Proyek Pribadi & Pembelajaran</h3>
-                <p>Mengerjakan berbagai proyek latihan seperti sistem manajemen data, aplikasi to-do list, dan website
-                    statis untuk meningkatkan keterampilan coding.</p>
-                <span>2023 - Sekarang</span>
-            </div>
-        </div>
-    </section>
-    <!-- <section id="experience" data-aos="fade-up">
-        <h2>Experience</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <h3>Web Developer Intern - PT Example</h3>
-                <span>2024</span>
-                <p>Developed responsive web applications using Laravel and PostgreSQL.</p>
-            </div>
-            <div class="timeline-item">
-                <h3>Freelance Web Developer</h3>
-                <span>2023 - Present</span>
-                <p>Created websites and web apps for clients with modern UI/UX.</p>
-            </div>
-        </div>
-    </section> -->
+        <!-- SKILLS -->
+        <section id="skills" class="section fade-up">
+            <div class="container">
+                <h3 class="section-title">Skills</h3>
 
-    <!-- CONTACT -->
-    <section id="contact" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:igarakun2@gmail.com">munggar@email.com</a></p>
-        <p>GitHub: <a href="https://github.com/munggar" target="_blank">munggarmuharram</a></p>
-        <p>LinkedIn: <a href="#">LinkedIn Profile</a></p>
-    </section>
+                <div class="skill">
+                    <div class="skill-top">
+                        <span>HTML</span><span class="skill-percent">90%</span>
+                    </div>
+                    <div class="skill-bar" data-percent="90">
+                        <div class="skill-fill"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-top">
+                        <span>CSS</span><span class="skill-percent">85%</span>
+                    </div>
+                    <div class="skill-bar" data-percent="85">
+                        <div class="skill-fill"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-top">
+                        <span>JavaScript</span><span class="skill-percent">80%</span>
+                    </div>
+                    <div class="skill-bar" data-percent="80">
+                        <div class="skill-fill"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-top">
+                        <span>Laravel</span><span class="skill-percent">75%</span>
+                    </div>
+                    <div class="skill-bar" data-percent="75">
+                        <div class="skill-fill"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="section fade-up">
+            <div class="container">
+                <h3 class="section-title">Featured Projects</h3>
+
+                <div class="project-grid">
+                    <article class="project-card">
+                        <figure class="project-media">
+                            <img src="https://via.placeholder.com/800x500" alt="Portofolio Pribadi">
+                        </figure>
+                        <div class="project-body">
+                            <h4>Portofolio Pribadi</h4>
+                            <p>Website portofolio statis yang menampilkan profil, proyek, dan informasi kontak.</p>
+                            <div class="project-links">
+                                <a class="btn-sm" href="https://munggar.github.io" target="_blank"
+                                    rel="noopener">Demo</a>
+                                <a class="btn-sm" href="https://github.com/munggar/munggar.github.io" target="_blank"
+                                    rel="noopener">Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <figure class="project-media">
+                            <img src="https://via.placeholder.com/800x500" alt="projectPKK">
+                        </figure>
+                        <div class="project-body">
+                            <h4>projectPKK</h4>
+                            <p>Aplikasi JavaScript sederhana untuk pengelolaan data PKK.</p>
+                            <div class="project-links">
+                                <a class="btn-sm" href="https://github.com/munggar/projectPKK" target="_blank"
+                                    rel="noopener">Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <figure class="project-media">
+                            <img src="https://via.placeholder.com/800x500" alt="ujikom">
+                        </figure>
+                        <div class="project-body">
+                            <h4>ujikom</h4>
+                            <p>Proyek Uji Kompetensi Keahlian berbasis HTML, CSS, dan JavaScript.</p>
+                            <div class="project-links">
+                                <a class="btn-sm" href="https://github.com/munggar/ujikom" target="_blank"
+                                    rel="noopener">Code</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience" class="section fade-up">
+            <div class="container">
+                <h3 class="section-title">Experience</h3>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Freelance Web Developer</h4>
+                        <p>Membangun website untuk UMKM dan portofolio personal dengan desain responsif dan optimasi
+                            performa.</p>
+                        <span class="timeline-date">2024 - Sekarang</span>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Proyek Pribadi & Pembelajaran</h4>
+                        <p>Mengerjakan berbagai proyek latihan seperti sistem manajemen data dan aplikasi to-do list.
+                        </p>
+                        <span class="timeline-date">2023 - Sekarang</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section fade-up">
+            <div class="container">
+                <h3 class="section-title">Contact Me</h3>
+                <p>
+                    Email: <a href="mailto:munggar@email.com">munggar@email.com</a><br>
+                    GitHub: <a href="https://github.com/munggar" target="_blank" rel="noopener">munggarmuharram</a><br>
+                    LinkedIn: <a href="#" target="_blank" rel="noopener">LinkedIn Profile</a>
+                </p>
+            </div>
+        </section>
+    </main>
 
     <!-- FOOTER -->
-    <footer>
-        <p>© 2025 Munggar Fajar Muharram - Built with ❤️</p>
-        <p class="credit">This portfolio was created in collaboration with AI 🤝</p>
+    <footer class="site-footer">
+        <div class="container">
+            © 2025 Munggar Fajar Muharram — Built with ❤️ | This portfolio was created in collaboration with AI 🤝
+        </div>
     </footer>
 
+    <!-- SCROLL TOP -->
+    <button id="scrollTop" class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
 
-    <!-- SCRIPTS -->
-    <script src="script.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Scripts -->
+    <!-- <script src="script.js" defer></script> -->
+
+    <!-- Typed.js for typing effect -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
+
+    <!-- Typing Animation -->
     <script>
-        AOS.init({
-            duration: 1000,
-            once: true,
-            easing: 'ease-in-out',
-            offset: 100,
+        document.addEventListener("DOMContentLoaded", () => {
+            const typingElement = document.querySelector('#typingName');
+            const words = [
+                "Munggar Fajar Muharram",
+                "Web Developer",
+                "UI Designer",
+                "Problem Solver"
+            ];
+            let wordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            function typeEffect() {
+                const currentWord = words[wordIndex];
+                typingElement.textContent = currentWord.substring(0, charIndex);
+
+                if (!isDeleting && charIndex < currentWord.length) {
+                    charIndex++;
+                    setTimeout(typeEffect, 100);
+                } else if (isDeleting && charIndex > 0) {
+                    charIndex--;
+                    setTimeout(typeEffect, 50);
+                } else {
+                    isDeleting = !isDeleting;
+                    if (!isDeleting) {
+                        wordIndex = (wordIndex + 1) % words.length;
+                    }
+                    setTimeout(typeEffect, 1000);
+                }
+            }
+
+            typeEffect();
+        });
+        // Toggle Dark Mode
+        const toggleBtn = document.getElementById('themeToggle');
+        let darkMode = true; // kondisi awal dark mode
+
+        // Pastikan kelas awal dark mode
+        document.body.classList.remove('light-mode');
+        toggleBtn.checked = false; // checkbox mati artinya dark mode
+
+        toggleBtn.addEventListener('change', () => {
+            darkMode = !darkMode;
+            document.body.classList.toggle('light-mode', !darkMode);
         });
     </script>
 </body>
