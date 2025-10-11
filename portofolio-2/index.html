@@ -1,0 +1,320 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Professional Portfolio - Modern, Interactive, and Responsive">
+        <title>Munggar Fajar Muharram | Portfolio</title>
+
+        <!-- Fonts & Libraries -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body data-theme="light">
+        <!-- PRELOADER -->
+        <div id="preloader" aria-hidden="true">
+            <div class="spinner">
+                <svg viewBox="0 0 50 50">
+                    <circle cx="25" cy="25" r="20" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button class="btn-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+            <!-- initial icon (moon) -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </button>
+
+        <header class="header" role="banner">
+            <div class="container nav-actions">
+                <nav class="navbar" role="navigation" aria-label="Main navigation">
+
+                    <!-- Desktop Nav -->
+                    <div class="nav-links" id="navLinksDesktop">
+                        <a class="nav-link" href="#home">Home</a>
+                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="#projects">Projects</a>
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <button class="btn-toggle" id="theme-toggle-mobile" aria-label="Toggle theme" title="Toggle theme">
+                        <!-- initial icon (moon) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Burger Menu -->
+                    <div class="mobile-menu-btn" id="mobileBtn" aria-label="Open menu" aria-expanded="false"
+                        role="button" tabindex="0">
+                        <span></span><span></span><span></span>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- MOBILE OVERLAY NAV -->
+            <div class="nav-links-mobile" id="navLinksMobile" aria-hidden="true">
+                <a class="nav-link" href="#home">Home</a>
+                <a class="nav-link" href="#about">About</a>
+                <a class="nav-link" href="#projects">Projects</a>
+                <a class="nav-link" href="#contact">Contact</a>
+            </div>
+        </header>
+
+
+
+        <!-- Hero Section -->
+        <main>
+            <section id="home" class="hero" aria-labelledby="home-label">
+                <div class="containerr">
+                    <div class="hero-content greeting" data-aos="fade-up" data-aos-delay="150">
+                        <h1 class="hero-title">Hi, I'm <span class="highlight" id="highlight"></span></h1>
+                        <p class="hero-subtitle" id="subtitle">Problem Solver | Web Developer | UI/UX Enthusiast </p>
+                        <div class="hero-buttons">
+                            <a href="#projects" class="btn btn-primary">View My Work</a>
+                            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                        </div>
+                    </div>
+
+                    <div class="hero-image" data-aos="fade-left" data-aos-delay="400">
+                        <div class="profile-placeholder" aria-hidden="true"><img src="/assets/images/aku.png"
+                                alt="igarrrr">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="about">
+                <div class="container">
+                    <div class="section-header text-center" data-aos="fade-up">
+                        <h2 class="section-title">About Me</h2>
+                        <p class="section-subtitle">Get to know me better</p>
+                    </div>
+
+                    <div class="about-content">
+                        <div class="about-text" data-aos="fade-right">
+                            <p>Hello! I'm <strong>Munggar Fajar Muharram</strong>, a university student based in Jakarta
+                                who
+                                is passionate about technology and continuous learning. I love solving problems and
+                                transforming ideas into real, functional web applications.</p>
+                            <p>I specialize in <strong>Laravel</strong> and backend development, while also being
+                                skilled in
+                                <strong>HTML, CSS, PHP, MySQL, PostgreSQL, and Java</strong>. My focus is on writing
+                                clean,
+                                maintainable code and creating user-centered digital experiences.</p>
+
+                            <div class="skills">
+                                <div class="skill-item" data-aos="fade-up" data-aos-delay="80">
+                                    <h4>Core</h4>
+                                    <p>Problem Solving · HTML · CSS · Laravel</p>
+                                </div>
+                                <div class="skill-item" data-aos="fade-up" data-aos-delay="160">
+                                    <h4>Backend & DB</h4>
+                                    <p>PHP · MySQL · PostgreSQL · REST APIs</p>
+                                </div>
+                                <div class="skill-item" data-aos="fade-up" data-aos-delay="240">
+                                    <h4>Other</h4>
+                                    <p>Java · Basic DevOps · Version Control (Git)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <aside class="about-stats" data-aos="fade-left">
+                            <div class="stat-item">
+                                <span class="stat-number">10+</span>
+                                <span class="stat-label">Projects Completed</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">4</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Client Satisfaction</span>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skill Section -->
+            <section id="skills" class="skills">
+                <div class="containers">
+                    <div class="section-header text-center">
+                        <h2 class="section-title">My Skills</h2>
+                        <p class="section-subtitle">Technologies and tools I work with</p>
+                    </div>
+
+                    <ul class="skills-bar-container">
+                        <li>
+                            <div class="progressbar-title">
+                                <h3>HTML5</h3>
+                                <span class="percent">100%</span>
+                            </div>
+                            <div class="bar-container">
+                                <div class="progressbar" style="width:100%"></div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="progressbar-title">
+                                <h3>CSS3</h3>
+                                <span class="percent">90%</span>
+                            </div>
+                            <div class="bar-container">
+                                <div class="progressbar" style="width:90%"></div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="progressbar-title">
+                                <h3>PHP</h3>
+                                <span class="percent">75%</span>
+                            </div>
+                            <div class="bar-container">
+                                <div class="progressbar" style="width:75%"></div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="progressbar-title">
+                                <h3>MySQL</h3>
+                                <span class="percent">60%</span>
+                            </div>
+                            <div class="bar-container">
+                                <div class="progressbar" style="width:60%"></div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="progressbar-title">
+                                <h3>Laravel</h3>
+                                <span class="percent">70%</span>
+                            </div>
+                            <div class="bar-container">
+                                <div class="progressbar" style="width:70%"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+
+            <!-- Projects Section -->
+            <section id="projects" class="projects">
+                <div class="container">
+                    <div class="section-header text-center" data-aos="fade-up">
+                        <h2 class="section-title">My Projects</h2>
+                        <p class="section-subtitle">A showcase of my GitHub repositories</p>
+                    </div>
+
+                    <div class="projects-slider" data-aos="fade-up" data-aos-delay="120">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper" id="project-slides">
+                                <!-- Projects will be injected here by JavaScript -->
+                            </div>
+
+                            <div class="swiper-button-next" aria-label="Next slide"></div>
+                            <div class="swiper-button-prev" aria-label="Previous slide"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+
+                    <noscript>
+                        <p class="text-center text-muted">Please enable JavaScript to view my projects.</p>
+                    </noscript>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact">
+                <div class="container">
+                    <div class="section-header text-center" data-aos="fade-up">
+                        <h2 class="section-title">Get In Touch</h2>
+                        <p class="section-subtitle">Let's work together on your next project</p>
+                    </div>
+
+                    <div class="contact-content">
+                        <div class="contact-info" data-aos="fade-right">
+                            <h3 class="contact-title">Contact Information</h3>
+                            <br>
+                            <div class="contact-item">
+                                <div class="contact-icon" aria-hidden="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                        </path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="contact-details"><span class="contact-label">Email: </span><a
+                                        class="contact-value" href="mailto:igarakun2@gmail.com">igarakun2@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon" aria-hidden="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="contact-details"><span class="contact-label">On Insta: </span><a
+                                        class="contact-value" href="https://instagram.com/garrrzx_" target="_blank"
+                                        rel="noopener">@garrrzx_</a></div>
+                            </div>
+
+                        </div>
+
+                        <div class="contact-form" data-aos="fade-left">
+                            <form id="contactForm" novalidate>
+                                <div class="form-group"><label class="sr-only" for="name">Your name</label><input
+                                        id="name" name="name" type="text" placeholder="Your Name" required></div>
+                                <br>
+                                <div class="form-group"><label class="sr-only" for="email">Your email</label><input
+                                        id="email" name="email" type="email" placeholder="Your Email" required></div>
+                                <br>
+                                <div class="form-group"><label class="sr-only" for="message">Message</label><textarea
+                                        id="message" name="message" rows="5" placeholder="Your Message"
+                                        required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container text-center">
+                <p>&copy; 2024 Munggar Fajar Muharram. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <!-- External scripts -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+
+    </html>
