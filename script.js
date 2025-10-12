@@ -350,4 +350,3 @@ document.addEventListener("DOMContentLoaded", async () => {
         wrapper.innerHTML = `<p class="text-center text-danger">Failed to load projects. Please try again later.</p>`;
     }
 });
->>>>>>> 578df36 (update layout)
