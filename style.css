@@ -827,4 +827,155 @@ img {
 .sr-only {
     position: absolute;
     left: -9999px;
+
+}
+
+/* ========== EXTRA RESPONSIVE ADJUSTMENTS ========== */
+
+/* Tablet (max-width: 992px) */
+@media (max-width: 992px) {
+  .container,
+  .containerr {
+    padding: 0 1.25rem;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-placeholder {
+    width: 260px;
+    height: 260px;
+    margin: 2rem auto 0;
+  }
+
+  .skills-bar-container li {
+    margin-bottom: 18px;
+  }
+}
+
+/* Smartphone (max-width: 768px) */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  .header {
+    height: auto;
+    padding: 0.75rem 0;
+  }
+
+  .hero {
+    padding: 6rem 1rem 3rem;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .profile-placeholder {
+    width: 220px;
+    height: 220px;
+  }
+
+  .skills-bar-container {
+    width: 100%;
+  }
+
+  .projects {
+    padding: 3rem 1rem;
+  }
+
+  .project-card {
+    padding: 1.25rem;
+  }
+
+  .contact {
+    padding: 3rem 1rem;
+  }
+
+  .footer {
+    padding: 1rem 0.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Small phones (max-width: 576px) */
+@media (max-width: 576px) {
+  .hero {
+    padding: 5rem 1rem 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .project-card {
+    text-align: center;
+  }
+
+  .project-tech span {
+    font-size: 0.8rem;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-icon {
+    margin-bottom: 6px;
+  }
+}
+
+/* Very small screens (max-width: 400px) */
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .profile-placeholder {
+    width: 180px;
+    height: 180px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .footer {
+    font-size: 0.8rem;
+  }
 }
