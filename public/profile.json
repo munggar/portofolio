@@ -1,0 +1,59 @@
+{
+  "name": "Munggar Fajar Muharram",
+  "title": "Web Developer",
+  "about": "Web Developer asal Bandung yang berfokus pada pembuatan aplikasi berbasis web dengan pengalaman di Laravel, Node.js, dan integrasi API. Terbiasa mengembangkan project full-stack dengan desain interaktif dan sistem fungsional yang efisien.",
+  "skills": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "PHP",
+    "Laravel",
+    "Node.js",
+    "Express",
+    "MySQL",
+    "REST API",
+    "Git"
+  ],
+  "projects": [
+    {
+      "name": "Penjualan App",
+      "desc": "A Laravel-based web application designed for managing product sales, customers, and transactions efficiently. It demonstrates CRUD operations, authentication, and database relationships using MySQL.",
+      "role": "Full-stack Developer",
+      "tech": ["Laravel", "PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+      "link": "https://github.com/munggar/penjualan"
+    },
+    {
+      "name": "WhatsApp Bot (Wabot)",
+      "desc": "A Node.js-based WhatsApp bot for automating message responses and improving communication efficiency. It includes command handling and integration with external APIs.",
+      "role": "Backend Developer",
+      "tech": ["Node.js", "JavaScript", "Express", "REST API"],
+      "link": "https://github.com/munggar/wabot"
+    },
+    {
+      "name": "Ujikom Project",
+      "desc": "A simple PHP project created for competency testing (Ujikom), focusing on CRUD features and structured database integration.",
+      "role": "Web Developer",
+      "tech": ["PHP", "MySQL", "HTML", "CSS"],
+      "link": "https://github.com/munggar/ujikom"
+    },
+    {
+      "name": "Form Handling App",
+      "desc": "A lightweight PHP project demonstrating data validation, input sanitization, and form handling in a clean user interface.",
+      "role": "Frontend & Backend Developer",
+      "tech": ["PHP", "HTML", "CSS"],
+      "link": "https://github.com/munggar/form"
+    },
+    {
+      "name": "Project PKK",
+      "desc": "A collaborative Laravel project for community-related activities and data management. Includes user authentication, admin dashboard, and data reporting features.",
+      "role": "Full-stack Developer",
+      "tech": ["Laravel", "PHP", "MySQL", "Blade"],
+      "link": "https://github.com/munggar/projectPKK"
+    }
+  ],
+  "contact": {
+    "github": "https://github.com/munggar",
+    "email": "igarakun2@gmail.com",
+    "instagram": "@garrzx_"
+  }
+}

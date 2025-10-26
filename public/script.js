@@ -23,15 +23,20 @@
   let history = loadHistory();
   renderHistory();
 
+  panel.setAttribute('aria-hidden', 'true');
+  toggleBtn.setAttribute('aria-expanded', 'false');
+
   // Accessibility
   function openPanel() {
     panel.setAttribute('aria-hidden', 'false');
+    panel.classList.add('active');
     toggleBtn.setAttribute('aria-expanded', 'true');
     input.focus();
     scrollToBottom();
   }
   function closePanel() {
     panel.setAttribute('aria-hidden', 'true');
+    panel.classList.remove('active');
     toggleBtn.setAttribute('aria-expanded', 'false');
     toggleBtn.focus();
   }
@@ -216,7 +221,7 @@ window.addEventListener('load', () => {
 
 /* ----------- Typing effect for role (hero) ----------- */
 const typingEl = document.getElementById('highlight');
-const roles = ["Munggar Fajar Muharram", "Problem Solver", "Web Developer", "UI/UX Enthusiast"];
+const roles = ["Munggar Fajar Muharram", "Problem Solver", "Web Developer", "UI/UX Designer"];
 if (typingEl) {
     let wi = 0,
         ci = 0,
@@ -372,6 +377,7 @@ const nav = document.getElementById("navLinksMobile");
 mobileBtn.addEventListener("click", () => {
     mobileBtn.classList.toggle("active");
     navLinksMobile.classList.toggle("active");
+    document.body.classList.toggle("no-scroll");
 
     const isExpanded = mobileBtn.classList.contains("active");
     mobileBtn.setAttribute("aria-expanded", isExpanded);
@@ -390,11 +396,15 @@ mobileBtn.addEventListener("click", () => {
 // Tutup menu setelah klik link
 document.querySelectorAll(".nav-links-mobile .nav-link").forEach(link => {
     link.addEventListener("click", () => {
+        document.body.classList.remove("no-scroll");
+        navLinksMobile.classList.add("closed");
+
+        setTimeout(() => {
         mobileBtn.classList.remove("active");
         navLinksMobile.classList.remove("active");
+        }, 400); 
     });
 });
-
 
 // Smooth scrolling and active link highlighting
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -523,14 +533,14 @@ document.addEventListener("DOMContentLoaded", async () => {
             loop: true,
             slidesPerView: "auto",
             coverflowEffect: {
-                rotate: 40,
+                rotate: 20,
                 stretch: 0,
-                depth: 120,
+                depth: 150,
                 modifier: 2,
                 slideShadows: true,
             },
             autoplay: {
-                delay: 4000,
+                delay: 5000,
                 disableOnInteraction: false,
             },
             pagination: {
@@ -556,45 +566,41 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 });
 
-(function () {
-  // quick feature-detect: reduce motion or touch device -> disable interactive effects
-  const prefersReduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.addEventListener("DOMContentLoaded", () => {
+  const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
 
-  // mouse-follow glow element
+  // Buat elemen glow
   const glow = document.createElement('div');
   glow.className = 'mouse-glow';
   document.body.appendChild(glow);
 
   if (prefersReduce || isTouch) {
     glow.style.display = 'none';
+    return;
   }
 
-  // update CSS variables for mouse pos
-  function onMove(e) {
-    const x = e.clientX || (e.touches && e.touches[0] && e.touches[0].clientX) || window.innerWidth/2;
-    const y = e.clientY || (e.touches && e.touches[0] && e.touches[0].clientY) || window.innerHeight/2;
-    glow.style.setProperty('--mx', x + 'px');
-    glow.style.setProperty('--my', y + 'px');
-    // move via transform to avoid layout thrash
-    glow.style.transform = 'translate3d(' + (x - (glow.offsetWidth/2)) + 'px,' + (y - (glow.offsetHeight/2)) + 'px,0)';
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let glowX = mouseX;
+  let glowY = mouseY;
+  const speed = 0.2;
+
+  function updateGlow() {
+    glowX += (mouseX - glowX) * speed;
+    glowY += (mouseY - glowY) * speed;
+    glow.style.transform = `translate3d(${glowX - 100}px, ${glowY - 100}px, 0)`; // 100 = setengah dari size 200px
+    requestAnimationFrame(updateGlow);
   }
 
-  // throttle using rAF
-  let ticking = false;
-  function onPointer(e) {
-    if (prefersReduce || isTouch) return;
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        onMove(e);
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
 
-  window.addEventListener('mousemove', onPointer, {passive: true});
-  window.addEventListener('touchmove', onPointer, {passive: true});
+  updateGlow();
+});
+
 
   /* -----------------------
      Parallax / tilt for .parallax-section and .project-card
@@ -661,6 +667,4 @@ document.addEventListener("DOMContentLoaded", async () => {
       card.classList.remove('is-active');
       document.body.classList.remove('target-active');
     }, {passive: true});
-  });
-
-})();
+  })();

@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
 
-    
+    <!-- <div class="mouse-glow"></div>     -->
 
     <body data-theme="light">
         <!-- PRELOADER -->
@@ -84,7 +84,7 @@
                 <div class="containerr">
                     <div class="hero-content greeting" data-aos="fade-up" data-aos-delay="150">
                         <h1 class="hero-title">Hi, I'm <span class="highlight" id="highlight"></span></h1>
-                        <p class="hero-subtitle" id="subtitle">Problem Solver | Web Developer | UI/UX Enthusiast </p>
+                        <p class="hero-subtitle" id="subtitle">Problem Solver | Web Developer | UI/UX Designer </p>
                         <div class="hero-buttons">
                             <a href="#projects" class="btn btn-primary">View My Work</a>
                             <a href="#contact" class="btn btn-secondary">Get In Touch</a>
@@ -92,8 +92,7 @@
                     </div>
 
                     <div class="hero-image" data-aos="fade-left" data-aos-delay="400">
-                        <div class="profile-placeholder" aria-hidden="true"><img src="/images/aku.png"
-                                alt="igarrrr">
+                        <div class="profile-placeholder" aria-hidden="true"><img src="/images/aku.png" alt="igarrrr">
                         </div>
                     </div>
                 </div>
@@ -195,26 +194,37 @@
                         <li>
                             <div class="progressbar-title">
                                 <h3>MySQL</h3>
-                                <span class="percent">60%</span>
-                            </div>
-                            <div class="bar-container">
-                                <div class="progressbar" style="width:60%"></div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="progressbar-title">
-                                <h3>Laravel</h3>
                                 <span class="percent">70%</span>
                             </div>
                             <div class="bar-container">
                                 <div class="progressbar" style="width:70%"></div>
                             </div>
                         </li>
+
+                        <li>
+                            <div class="progressbar-title">
+                                <h3>Laravel</h3>
+                                <span class="percent">80%</span>
+                            </div>
+                            <div class="bar-container">
+                                <div class="progressbar" style="width:70%"></div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="progressbar-title">
+                                <h3>JavaScript & Framework</h3>
+                                <span class="percent">65%</span>
+                            </div>
+                            <div class="bar-container">
+                                <div class="progressbar" style="width:65%"></div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </section>
 
+            <!-- Certificate Section -->
 
             <!-- Projects Section -->
             <section id="projects" class="projects parallax-section">
@@ -309,8 +319,7 @@
                         </div>
 
                         <div class="contact-form" data-aos="fade-left">
-                            <form id="contactForm" style="width: -webkit-fill-available;" action="https://api.web3forms.com/submit" method="POST">
-                                <input type="hidden" name="access_key" value="cb642a6f-7f56-4f89-9f5d-fdc70f3776f5">
+                            <form id="contactForm" novalidate style="width: -webkit-fill-available;">
                                 <div class="form-group"><label class="sr-only" for="name">Your name</label><input
                                         id="name" name="name" type="text" placeholder="Your Name" required></div>
                                 <br>
@@ -338,38 +347,37 @@
         </footer>
 
         <!-- AI Assistant Widget -->
-        <div id="ai-assistant" aria-live="polite">
-            <button id="ai-toggle" class="ai-fab" aria-expanded="false" aria-label="Open AI Assistant">
-                <!-- Chat icon -->
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                </svg>
-            </button>
+        <button id="ai-toggle" class="ai-fab" aria-expanded="false" aria-label="Open AI Assistant">
+            <!-- Chat icon -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </button>
 
-            <aside id="ai-panel" class="ai-panel" role="dialog" aria-label="AI Assistant" aria-hidden="true">
-                <header class="ai-header">
-                    <div>
-                        <strong>Igar Assistant</strong>
-                        <div class="ai-subtitle">Ask me about my portfolio, code, or projects</div>
-                    </div>
-                    <button id="ai-close" aria-label="Close assistant">&times;</button>
-                </header>
-
-                <div id="ai-messages" class="ai-messages" role="log" aria-live="polite"></div>
-
-                <form id="ai-form" class="ai-form" aria-label="Send message to AI">
-                    <textarea id="ai-input" rows="1" placeholder="Type a question... (press Enter to send)"
-                        required></textarea>
-                    <button type="submit" class="ai-send" aria-label="Send message">Send</button>
-                </form>
-
-                <div id="ai-footer" class="ai-footer">
-                    <button id="ai-clear" class="ai-clear">Clear</button>
-                    <div class="ai-status" id="ai-status" aria-hidden="true"></div>
+        <aside id="ai-panel" class="ai-panel" role="dialog" aria-label="AI Assistant" aria-hidden="true">
+            <header class="ai-header">
+                <div>
+                    <strong>Igar Assistant</strong>
+                    <div class="ai-subtitle">Ask me about my portfolio, code, or projects</div>
                 </div>
-            </aside>
-        </div>
+                <button id="ai-close" aria-label="Close assistant">&times;</button>
+            </header>
+
+            <div id="ai-messages" class="ai-messages" role="log" aria-live="polite"></div>
+
+            <form id="ai-form" class="ai-form" aria-label="Send message to AI">
+                <textarea id="ai-input" rows="1" placeholder="Type a question... (press Enter to send)"
+                    required></textarea>
+                <button type="submit" class="ai-send" aria-label="Send message">Send</button>
+            </form>
+
+            <div id="ai-footer" class="ai-footer">
+                <button id="ai-clear" class="ai-clear">Clear</button>
+                <div class="ai-status" id="ai-status" aria-hidden="true"></div>
+            </div>
+        </aside>
+        <!-- </div> -->
 
         <!-- External scripts -->
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
