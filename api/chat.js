@@ -50,7 +50,7 @@ app.post("/api/chat", async (req, res) => {
     const msgLower = message.toLowerCase();
 
     // Baca data profil
-    const profileData = JSON.parse(fs.readFileSync("public/profile.json", "utf-8"));
+    const profileData = JSON.parse(fs.readFileSync("../public/profile.json", "utf-8"));
 
     if (!message || message.trim().length < 2) {
       return res.json({ reply: "Tolong tulis pertanyaan yang lebih jelas ya 😊" });
