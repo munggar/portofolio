@@ -59,7 +59,7 @@ body {
   /* cursor: none; */
 }
 
-body.no-scroll {
+body .no-scroll {
   overflow: hidden;
 }
 
@@ -301,15 +301,16 @@ p {
   position: fixed;
   top: 0;
   left: 0;
-  height: 1000vh;
   width: 100%;
+  height: 120vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
   opacity: 0;
-  pointer-events: none;
+  transform: translateY(-100%);
+  transition: opacity 0.4s ease, transform 0.4s ease;
   z-index: 10000;
 }
 
@@ -319,13 +320,12 @@ p {
   transform: translateY(0);
   background: rgba(10, 15, 25, 0.95);
   backdrop-filter: blur(10px);
-  transition: ease 0.5s, opacity 0.4s ease, transform 0.4s ease;
+  overflow: hidden;
 }
 
 .nav-links-mobile.closed {
   opacity: 0;
   transform: translateY(-100%);
-  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .nav-links-mobile .nav-link {
@@ -1203,22 +1203,6 @@ body[data-theme="dark"] .ai-message.user {
     width: 240px;
     height: 240px;
   }
-}
-
-/* Mobile nav open state (max-height technique) */
-.nav-links-mobile {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  background: transparent;
-  padding: 1rem 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .36s ease;
-}
-
-.nav-links-mobile.active {
-  max-height: 260px;
 }
 
 /* Fade-in helper */

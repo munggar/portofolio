@@ -372,40 +372,90 @@ const swiper = new Swiper('.swiper', {
 // Mobile nav toggle with accessibility
 const mobileBtn = document.getElementById("mobileBtn");
 const navLinksMobile = document.getElementById("navLinksMobile");
-const nav = document.getElementById("navLinksMobile");
 
-mobileBtn.addEventListener("click", () => {
-    mobileBtn.classList.toggle("active");
-    navLinksMobile.classList.toggle("active");
-    document.body.classList.toggle("no-scroll");
+// State untuk mencegah multiple clicks
+let isAnimating = false;
 
-    const isExpanded = mobileBtn.classList.contains("active");
-    mobileBtn.setAttribute("aria-expanded", isExpanded);
-    navLinksMobile.setAttribute("aria-hidden", !isExpanded);
+function toggleMenu() {
+  if (isAnimating) return;
+  
+  const isActive = navLinksMobile.classList.contains("active");
+console.log("Is active:", isActive);
+  if (isActive) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+}
 
+function openMenu() {
+  isAnimating = true;
+  
+  // Reset state dulu
+  navLinksMobile.classList.remove("closed");
+  navLinksMobile.style.transition = 'none';
+  
+  // Force reflow
+  navLinksMobile.offsetHeight;
+  
+  // Enable transition dan apply active state
+  navLinksMobile.style.transition = '';
+  navLinksMobile.classList.add("active");
+  
+  navLinksMobile.setAttribute("aria-hidden", "false");
+  mobileBtn.setAttribute("aria-expanded", "true");
+  mobileBtn.classList.add("active");
+  document.body.classList.add("no-scroll");
+  
+  setTimeout(() => {
+    isAnimating = false;
+  }, 400);
+}
 
-    // kondisi tag header
-    if (isExpanded) {
-        nav.style.paddingTop = "70%";
-        nav.style.paddingBottom = "100%";
-    } else {
-        nav.style.paddingTop = "";
-        nav.style.paddingBottom = "";
-    }
-});
-// Tutup menu setelah klik link
+function closeMenu() {
+  isAnimating = true;
+  
+  // Trigger animasi close dengan menambahkan closed class
+  navLinksMobile.classList.add("closed");
+  navLinksMobile.setAttribute("aria-hidden", "true");
+  mobileBtn.setAttribute("aria-expanded", "false");
+  mobileBtn.classList.remove("active");
+  
+  setTimeout(() => {
+    navLinksMobile.classList.remove("active", "closed");
+    document.body.classList.remove("no-scroll");
+    isAnimating = false;
+  }, 400);
+}
+
+// Event Listeners
+mobileBtn.addEventListener("click", toggleMenu);
+
+// Tutup menu ketika klik link
 document.querySelectorAll(".nav-links-mobile .nav-link").forEach(link => {
-    link.addEventListener("click", () => {
-        document.body.classList.remove("no-scroll");
-        navLinksMobile.classList.add("closed");
-
-        setTimeout(() => {
-        mobileBtn.classList.remove("active");
-        navLinksMobile.classList.remove("active");
-        }, 400); 
-    });
+  link.addEventListener("click", () => {
+    if (navLinksMobile.classList.contains("active")) {
+      closeMenu();
+    }
+  });
 });
 
+// Tutup menu ketika klik di luar
+document.addEventListener('click', (e) => {
+  const isActive = navLinksMobile.classList.contains("active");
+  if (isActive && !navLinksMobile.contains(e.target) && !mobileBtn.contains(e.target)) {
+    closeMenu();
+  }
+});
+
+// Tutup menu dengan ESC
+document.addEventListener('keydown', (e) => {
+  const isActive = navLinksMobile.classList.contains("active");
+  if (isActive && e.key === 'Escape') {
+    closeMenu();
+  }
+});
+  
 // Smooth scrolling and active link highlighting
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

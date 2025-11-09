@@ -6,16 +6,9 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(express.static("public")); // kalau ada folder frontend
+app.use(express.static("../public")); // kalau ada folder frontend
 
-/**
- * Client custom untuk memanggil Hugging Face router API
- */
 const client = {};
-
-/**
- * Fungsi conversational menggunakan Hugging Face router
- */
 client.conversational = async function ({ model, inputs }) {
   try {
     const response = await fetch("https://router.huggingface.co/v1/chat/completions", {
@@ -25,11 +18,13 @@ client.conversational = async function ({ model, inputs }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model, // contoh: "katanemo/Arch-Router-1.5B:hf-inference"
+        model,
         messages: [{ role: "user", content: inputs }],
         stream: false,
       }),
     });
+    console.log(await response.text());
+
 
     const result = await response.json();
     const reply = result?.choices?.[0]?.message?.content;
